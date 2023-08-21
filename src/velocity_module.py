@@ -185,10 +185,10 @@ def main():
     fileName7 = files[7]
     fileName8 = files[8]
     fileName9 = files[9]
-    df = read_modified_file(fileName5)
-    print(df)
-    # id_person = get_most_repited(df)
-    # show_sk_vel_graph(df, id_person, 0)  # si es 0, no mostrar la
+    df = read_modified_file(fileName1)
+    
+    id_person = get_most_repited(df)
+    show_sk_vel_graph(df, id_person, 0)  # si es 0, no mostrar la
     # algo con continue?
 
 
@@ -248,7 +248,8 @@ with st.container():
     st.write('''En el estudio de peatones se calculó la constante de la ecuación de Weidmann (Sk) para obtener la velocidad de cada peatón
     en el archivo UNI_CORR_500_05 en función de los transeúntes dentro de un radio''')
     st.write("")
-    div = st.slider('ID peatón:', 1, 905, 710)
+    # div = st.slider('ID peatón:', 1, 905, 710)
+    div = st.slider('ID peatón:', 1, 108, 105)
     show_sk(div, 1)
     st.write("")
     st.write('''Con el Scatter se puede concluir que a mayor cantidad de transeúntes cercanos al analizado, menor es la velocidad predicha, y
