@@ -86,7 +86,7 @@ def read_file(filename):
 
 
 def read_modified_file(filename):
-    modified_filename = filename.rstrip(".txt")+"_modified.txt"
+    modified_filename = filename.rstrip(".txt")+"_modified.csv"
     dataFrame = pd.read_csv("./results/"+modified_filename, sep="\t")
     return dataFrame
 
