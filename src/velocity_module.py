@@ -186,9 +186,9 @@ def main():
     fileName8 = files[8]
     fileName9 = files[9]
     df = read_modified_file(fileName5)
-
-    id_person = get_most_repited(df)
-    show_sk_vel_graph(df, id_person, 0)  # si es 0, no mostrar la
+    print(df)
+    # id_person = get_most_repited(df)
+    # show_sk_vel_graph(df, id_person, 0)  # si es 0, no mostrar la
     # algo con continue?
 
 
