@@ -9,6 +9,7 @@ import streamlit as st
 from PIL import Image
 from scipy.spatial import KDTree
 from scipy.optimize import curve_fit
+import os
 
 # 6194813
 # 146.83.128.60
@@ -86,7 +87,7 @@ def read_file(filename):
 
 
 def read_modified_file(filename):
-    modified_filename = filename.rstrip(".txt")+"_modified.csv"
+    modified_filename = filename.rstrip(".txt")+"_modified.txt"
     dataFrame = pd.read_csv("./results/"+modified_filename, sep="\t")
     return dataFrame
 
@@ -185,8 +186,8 @@ def main():
     fileName7 = files[7]
     fileName8 = files[8]
     fileName9 = files[9]
-    df = read_modified_file(fileName1)
-    
+    # df = read_modified_file(fileName1)
+    df=pd.read_csv('PC-Laboratorio/src/results/UNI_CORR_500_01_modified.txt')
     id_person = get_most_repited(df)
     show_sk_vel_graph(df, id_person, 0)  # si es 0, no mostrar la
     # algo con continue?
