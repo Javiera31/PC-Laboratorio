@@ -139,16 +139,16 @@ def show_sk_vel_graph(df, id_person, flag):
 
     df = df[df["PersID"] == id_person]
     fig, ax = plt.subplots(figsize=(8, 6))
-    ax.scatter(df["Velocity"], df["Sk_Value"], marker='^')
-    ax.set_xlabel("Velocity")
-    ax.set_ylabel("Sk_Value")
-    ax.set_title("Correlación entre Velocity y Sk_Value")
+    ax.scatter(df["Sk_Value"], df["Velocity"], marker='^')
+    ax.set_xlabel("Sk_Value")
+    ax.set_ylabel("Velocity")
+    ax.set_title("Correlación entre Sk_Value y Velocity")
     plt.savefig("../images/"+"sk_vel_graph.png")
     plt.show()
     if (flag == 1):
         st.pyplot(fig)
 
-
+ 
 def get_most_repited(df):
     ids = df['PersID']
 
@@ -186,8 +186,8 @@ def main():
     fileName7 = files[7]
     fileName8 = files[8]
     fileName9 = files[9]
-    # df = read_modified_file(fileName1)
-    df=pd.read_csv('https://raw.githubusercontent.com/Javiera31/PC-Laboratorio/main/src/results/UNI_CORR_500_01_modified.txt',sep='\t')
+    df = read_modified_file(fileName5)
+
     id_person = get_most_repited(df)
     show_sk_vel_graph(df, id_person, 0)  # si es 0, no mostrar la
     # algo con continue?
@@ -202,9 +202,9 @@ with st.container():
         'Esta aplicación es para observar el comportamiento de peatones en el pasillo de un metro')
     left_column, right_column = st.columns(2)
     with left_column:
-        st.markdown(f'<h4 style="text-align: left; font-size: 24px;"><a href="https://github.com/slderlv/PC-Laboratorio" target="_blank" style="text-decoration: none; color: inherit;"><u>Visita el repositorio en GitHub</u></a></h4>', unsafe_allow_html=True)
+        st.markdown(f'<h4 style="text-align: left; font-size: 24px;"><a href="https://github.com/Javiera31/PC-Laboratorio/blob/main/images/sk_vel_graph.png" target="_blank" style="text-decoration: none; color: inherit;"><u>Visita el repositorio en GitHub</u></a></h4>', unsafe_allow_html=True)
     with right_column:
-        st.image('../images/github-mark-white.png', width=35)
+        st.image(Image.open('../images/github-mark-white.png'), width=35)
 
 st.write("---")
 
@@ -216,7 +216,7 @@ with st.container():
     incluyendo su ID, el frame del video en el que aparecen y sus coordenadas (x, y, z) en un espacio tridimensional. Los datos procesados
     permitieron la obtención de datos como la velocidad peatonal y el promedio de las distancias entre peatones dado un radio''')
     st.write("")
-    st.image('../images/histogram_velocity_comparisson.png',
+    st.image(Image.open('../images/histogram_velocity_comparisson.png'),
              caption='Fig 1. Histograma a partir de datos de archivo UNI_CORR_500_01 y UNI_CORR_500_05')
     st.write("")
     st.write('''A partir de los histogramas se puede observar patrones de velocidad distintos para los diferentes archivos seleccionados.
@@ -235,7 +235,7 @@ with st.container():
     st.write('''Para la comparación de velocidades entre diferentes peatones se creó un boxplot utilizando los datos del archivo UNI_CORR_500_01
     ''')
     st.write("")
-    st.image('../images/velocity_boxplot.png',
+    st.image(Image.open('../images/velocity_boxplot.png'),
              caption='Fig 2. Diagrama de caja y bigote a partir de datos de archivo UNI_CORR_500_01')
     st.write("")
     st.write('''En cuanto a los diagramas de caja generados, se observa que en el archivo UNI_CORR_500_01, la mediana de velocidad para
@@ -249,8 +249,8 @@ with st.container():
     st.write('''En el estudio de peatones se calculó la constante de la ecuación de Weidmann (Sk) para obtener la velocidad de cada peatón
     en el archivo UNI_CORR_500_05 en función de los transeúntes dentro de un radio''')
     st.write("")
-    # div = st.slider('ID peatón:', 1, 905, 710)
-    div = st.slider('ID peatón:', 1, 108, 105)
+    div = st.slider('ID peatón:', 1, 905, 710)
+    # div = st.slider('ID peatón:', 1, 108, 105)
     show_sk(div, 1)
     st.write("")
     st.write('''Con el Scatter se puede concluir que a mayor cantidad de transeúntes cercanos al analizado, menor es la velocidad predicha, y
