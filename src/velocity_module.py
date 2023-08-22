@@ -186,7 +186,7 @@ def main():
     fileName7 = files[7]
     fileName8 = files[8]
     fileName9 = files[9]
-    df = read_modified_file(fileName1)
+    df = pd.read_csv('https://raw.githubusercontent.com/slderlv/PC-Laboratorio/main/src/results/UNI_CORR_500_01_modified.txt', sep = '\t')
 
     id_person = get_most_repited(df)
     show_sk_vel_graph(df, id_person, 0)  # si es 0, no mostrar la
