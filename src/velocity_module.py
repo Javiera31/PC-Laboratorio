@@ -143,9 +143,7 @@ def show_sk_vel_graph(df, id_person, flag):
     ax.set_xlabel("Sk_Value")
     ax.set_ylabel("Velocity")
     ax.set_title("Correlación entre Sk_Value y Velocity")
-    plt.savefig("../images/"+"sk_vel_graph.png")
-    plt.show()
-    if (flag == 1):
+    if(flag == 1):
         st.pyplot(fig)
 
  
@@ -190,7 +188,6 @@ def main():
 
     id_person = get_most_repited(df)
     show_sk_vel_graph(df, id_person, 0)  # si es 0, no mostrar la
-    # algo con continue?
 
 
 main()
