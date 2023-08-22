@@ -201,7 +201,7 @@ with st.container():
     with left_column:
         st.markdown(f'<h4 style="text-align: left; font-size: 24px;"><a href="https://github.com/Javiera31/PC-Laboratorio/blob/main/images/sk_vel_graph.png" target="_blank" style="text-decoration: none; color: inherit;"><u>Visita el repositorio en GitHub</u></a></h4>', unsafe_allow_html=True)
     with right_column:
-        st.image(Image.open('../images/github-mark-white.png'), width=35)
+        st.image(Image.open('https://github.com/Javiera31/PC-Laboratorio/raw/main/images/github-mark-white.png'), width=35)
 
 st.write("---")
 
@@ -213,7 +213,7 @@ with st.container():
     incluyendo su ID, el frame del video en el que aparecen y sus coordenadas (x, y, z) en un espacio tridimensional. Los datos procesados
     permitieron la obtención de datos como la velocidad peatonal y el promedio de las distancias entre peatones dado un radio''')
     st.write("")
-    st.image(Image.open('../images/histogram_velocity_comparisson.png'),
+    st.image(Image.open('https://github.com/slderlv/PC-Laboratorio/raw/main/images/histogram_velocity_comparisson.png'),
              caption='Fig 1. Histograma a partir de datos de archivo UNI_CORR_500_01 y UNI_CORR_500_05')
     st.write("")
     st.write('''A partir de los histogramas se puede observar patrones de velocidad distintos para los diferentes archivos seleccionados.
@@ -232,7 +232,7 @@ with st.container():
     st.write('''Para la comparación de velocidades entre diferentes peatones se creó un boxplot utilizando los datos del archivo UNI_CORR_500_01
     ''')
     st.write("")
-    st.image(Image.open('../images/velocity_boxplot.png'),
+    st.image(Image.open('https://github.com/slderlv/PC-Laboratorio/raw/main/images/velocity_boxplot.png'),
              caption='Fig 2. Diagrama de caja y bigote a partir de datos de archivo UNI_CORR_500_01')
     st.write("")
     st.write('''En cuanto a los diagramas de caja generados, se observa que en el archivo UNI_CORR_500_01, la mediana de velocidad para
