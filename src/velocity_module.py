@@ -202,7 +202,8 @@ with st.container():
     with left_column:
         st.markdown(f'<h4 style="text-align: left; font-size: 24px;"><a href="https://github.com/Javiera31/PC-Laboratorio/blob/main/images/sk_vel_graph.png" target="_blank" style="text-decoration: none; color: inherit;"><u>Visita el repositorio en GitHub</u></a></h4>', unsafe_allow_html=True)
     with right_column:
-        st.image(Image.open('../images/github-mark-white.png'), width=35)
+        st.image(
+            'https://github.com/Javiera31/PC-Laboratorio/raw/main/images/github-mark-white.png', width=35)
 
 st.write("---")
 
