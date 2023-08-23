@@ -55,7 +55,7 @@ def compare_histograms(df1, df2, fileName1, fileName2):
     axes[1].set_xlabel("Frame")
     axes[1].set_ylabel("Velocity")
     axes[1].set_title(fileName2)
-    plt.savefig("../images/"+"histogram_velocity_comparisson.png")
+    # plt.savefig("../images/"+"histogram_velocity_comparisson.png")
     plt.show()
 
 
@@ -143,10 +143,10 @@ def show_sk_vel_graph(df, id_person, flag):
     ax.set_xlabel("Sk_Value")
     ax.set_ylabel("Velocity")
     ax.set_title("Correlación entre Sk_Value y Velocity")
-    if(flag == 1):
+    if (flag == 1):
         st.pyplot(fig)
 
- 
+
 def get_most_repited(df):
     ids = df['PersID']
 
@@ -184,7 +184,8 @@ def main():
     fileName7 = files[7]
     fileName8 = files[8]
     fileName9 = files[9]
-    df = pd.read_csv('https://raw.githubusercontent.com/slderlv/PC-Laboratorio/main/src/results/UNI_CORR_500_01_modified.txt', sep = '\t')
+    df = pd.read_csv(
+        'https://raw.githubusercontent.com/slderlv/PC-Laboratorio/main/src/results/UNI_CORR_500_01_modified.txt', sep='\t')
 
     id_person = get_most_repited(df)
     show_sk_vel_graph(df, id_person, 0)  # si es 0, no mostrar la
@@ -201,7 +202,7 @@ with st.container():
     with left_column:
         st.markdown(f'<h4 style="text-align: left; font-size: 24px;"><a href="https://github.com/Javiera31/PC-Laboratorio/blob/main/images/sk_vel_graph.png" target="_blank" style="text-decoration: none; color: inherit;"><u>Visita el repositorio en GitHub</u></a></h4>', unsafe_allow_html=True)
     with right_column:
-        st.image(Image.open('https://github.com/Javiera31/PC-Laboratorio/raw/main/images/github-mark-white.png'), width=35)
+        st.image(Image.open('../images/github-mark-white.png'), width=35)
 
 st.write("---")
 
@@ -213,7 +214,7 @@ with st.container():
     incluyendo su ID, el frame del video en el que aparecen y sus coordenadas (x, y, z) en un espacio tridimensional. Los datos procesados
     permitieron la obtención de datos como la velocidad peatonal y el promedio de las distancias entre peatones dado un radio''')
     st.write("")
-    st.image(Image.open('https://github.com/slderlv/PC-Laboratorio/raw/main/images/histogram_velocity_comparisson.png'),
+    st.image('https://github.com/Javiera31/PC-Laboratorio/raw/main/images/histogram_velocity_comparisson.png',
              caption='Fig 1. Histograma a partir de datos de archivo UNI_CORR_500_01 y UNI_CORR_500_05')
     st.write("")
     st.write('''A partir de los histogramas se puede observar patrones de velocidad distintos para los diferentes archivos seleccionados.
@@ -232,7 +233,7 @@ with st.container():
     st.write('''Para la comparación de velocidades entre diferentes peatones se creó un boxplot utilizando los datos del archivo UNI_CORR_500_01
     ''')
     st.write("")
-    st.image(Image.open('https://github.com/slderlv/PC-Laboratorio/raw/main/images/velocity_boxplot.png'),
+    st.image('https://github.com/Javiera31/PC-Laboratorio/raw/main/images/velocity_boxplot.png',
              caption='Fig 2. Diagrama de caja y bigote a partir de datos de archivo UNI_CORR_500_01')
     st.write("")
     st.write('''En cuanto a los diagramas de caja generados, se observa que en el archivo UNI_CORR_500_01, la mediana de velocidad para
